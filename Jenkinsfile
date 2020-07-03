@@ -22,8 +22,11 @@ pipeline {
                 echo "GIT_BRANCH: $GIT_BRANCH"
                 echo "BUILD_NUMBER: $BUILD_NUMBER"
 
+                echo "cbname: ${currentBuild.displayName}"
+                echo "cbid: ${currentBuild.id}"
+
                 script {
-                    currentBuild.displayName
+                    // currentBuild.displayName
                     currentBuild.displayName = "${env.BRANCH_NAME}-${currentBuild.id}"
                 }
 
